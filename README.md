@@ -37,7 +37,6 @@ infra/
 2. Completar secretos en .env:
    - CLOUDFLARE_TOKEN
    - ENCRYPTION_KEY
-   - JWT_SECRET
    - TS_AUTHKEY
 3. Revisar PROJECTS_DIRECTORY para que apunte a tu raiz de proyectos.
 
@@ -52,8 +51,7 @@ Ejemplo para generarlos y guardarlos en `.env` (persistente):
 
 ```bash
 enc="$(openssl rand -hex 32)"
-jwt="$(openssl rand -hex 32)"
-perl -i.bak -pe "s/^ENCRYPTION_KEY=.*/ENCRYPTION_KEY=$enc/; s/^JWT_SECRET=.*/JWT_SECRET=$jwt/" .env
+perl -i.bak -pe "s/^ENCRYPTION_KEY=.*/ENCRYPTION_KEY=$enc/" .env
 ```
 
 Esto escribe valores reales en el archivo `.env`. Si reinicias, siguen ahi hasta que los cambies.
