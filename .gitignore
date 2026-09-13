@@ -1,0 +1,6 @@
+.env
+!arcane/.env
+!cloudflared/.env
+!tailscale/.env
+arcane/data/
+tailscale/state/
