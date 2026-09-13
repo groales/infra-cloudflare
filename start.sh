@@ -20,7 +20,7 @@ if [[ -z "${PROJECTS_DIRECTORY:-}" ]]; then
   exit 1
 fi
 
-mkdir -p "$ROOT_DIR/arcane/data" "$ROOT_DIR/tailscale/state"
+mkdir -p "$ROOT_DIR/arcane/data" "$ROOT_DIR/tailscale/state" "$ROOT_DIR/heimdall/config"
 
 if ! docker network inspect proxy >/dev/null 2>&1; then
   echo "Creando red externa proxy..."
@@ -38,5 +38,6 @@ run_stack() {
 run_stack "cloudflared"
 run_stack "arcane"
 run_stack "tailscale"
+run_stack "heimdall"
 
 echo "Infra arrancada correctamente."

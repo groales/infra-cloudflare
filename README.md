@@ -5,6 +5,7 @@ Infraestructura Docker para publicacion, gestion y acceso remoto:
 - Cloudflared (tunel Cloudflare)
 - Arcane (gestion de proyectos/servicios Docker)
 - Tailscale (acceso remoto)
+- Heimdall (dashboard de aplicaciones)
 
 ## Estructura
 
@@ -21,7 +22,10 @@ infra/
 ├── arcane/
 │   ├── compose.yaml
 │   └── .env -> ../.env
-└── tailscale/
+├── tailscale/
+│   ├── compose.yaml
+│   └── .env -> ../.env
+└── heimdall/
    ├── compose.yaml
    └── .env -> ../.env
 ```
@@ -63,6 +67,7 @@ Tambien puedes arrancar cada stack desde su carpeta sin parametros extra:
 - cd cloudflared && docker compose up -d
 - cd arcane && docker compose up -d
 - cd tailscale && docker compose up -d
+- cd heimdall && docker compose up -d
 
 ## Parada
 

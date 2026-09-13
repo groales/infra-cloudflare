@@ -2,5 +2,7 @@
 !arcane/.env
 !cloudflared/.env
 !tailscale/.env
+!heimdall/.env
 arcane/data/
 tailscale/state/
+heimdall/config/
